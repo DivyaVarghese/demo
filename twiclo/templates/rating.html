@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{%block content %}	
+<!-- Start Contact Area -->
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	alert('inside script')
+$(document).ready(function(){
+	var t;
+	alert('inside ready');
+	t=$("#status").val();
+	if(t==1){
+		  $(".rr").show();
+	}
+	else{
+		  $(".rr").hide();
+	}
+});
+
+	
+</script>
+
+
+			<section class="contact-area" id="contact">
+				<div class="container-fluid">
+					<div class="row align-items-center d-flex justify-content-start">
+						<div class="col-lg-6 col-md-12 contact-left no-padding">
+	      					
+						</div>
+						<div class="col-lg-4 col-md-12 pt-100 pb-100 ">
+							<form action="{% url 'rating_url'  %}" method="POST">
+
+								<div><input type="text" disabled="disabled" name="hname" value="{{u3}}">
+
+								<input type="text" name="rate" placeholder="Enter your rating out of 5" class="-common-input mt-10">
+								</div>
+							<div><input type="text" disabled="disabled" name="oid" value="{{u4}}" style="display:none">
+
+							
+								</div>{% endfor%}
+								<input type="submit" class="primary-btn mt-20" value="rate here">
+								<div class="mt-10 alert-msg">
+								</div>
+								<input type="text" name="status" value="{{u13}}" style="display: none;">
+								<input type="text" name="hid" value="{{u2}}" style="display: none;">
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Contact Area -->	
+
+{%endblock%}				
